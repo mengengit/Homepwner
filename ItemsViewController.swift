@@ -14,7 +14,21 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
     }
- 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Get the height of the status bar
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        
+        //Table to start under statusBar
+        tableView.contentInset = insets
+        
+        //Scroll indicators to start under statusBar as well
+        tableView.scrollIndicatorInsets = insets
+    }
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /*
