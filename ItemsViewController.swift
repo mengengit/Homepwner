@@ -12,12 +12,13 @@ class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(" Starting override func tableView-A")
         return itemStore.allItems.count
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(" Started viewDidLoad() from ItemsViewController.swift")
         // Get the height of the status bar
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
@@ -28,9 +29,11 @@ class ItemsViewController: UITableViewController {
         
         //Scroll indicators to start under statusBar as well
         tableView.scrollIndicatorInsets = insets
+        print(" Ending viewDidLoad() from ItemsViewController.swift")
     }
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(" Starting override func tableView-B")
         /*
         //Create an instance of UITableViewCell, with default appearance
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
@@ -46,7 +49,8 @@ class ItemsViewController: UITableViewController {
         let item = itemStore.allItems[indexPath.row]
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
-        
+        print(" Exiting override func tableView-B")
+
         return cell
     }
     
