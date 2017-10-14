@@ -10,6 +10,36 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
+    
+    @IBAction func addNewItem(_ sender: UIButton) {
+        // Create a new item and add it to the store
+        let newItem = itemStore.createItem()
+        
+        // Figure out where that item is in the array
+        if let index = itemStore.allItems.index(of: newItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+        
+            // Insert this new row into the table
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+        
+    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIButton) {
+        // If you are currently in editing mode...
+        if isEditing {
+            sender.setTitle("Edit", for: .normal)
+            
+            // Turn off editing mode
+            setEditing(false, animated: true)
+        } else {
+            // Change text of button to inform user of state
+            sender.setTitle("Done", for: .normal)
+            
+            // Enter editing mode
+            setEditing(true, animated:true)
+        }
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(" Starting override func tableView-A")
@@ -47,7 +77,7 @@ class ItemsViewController: UITableViewController {
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
         let item = itemStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.name
+        cell.textLabel?.text = item.name //+ " S/N " + item.serialNumber!
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         print(" Exiting override func tableView-B")
 

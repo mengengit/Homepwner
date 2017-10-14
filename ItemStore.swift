@@ -13,15 +13,23 @@ class ItemStore {
     var allItems = [Item]()
     var counter = 0
     init() {
+        /*
         print(" Starting itemStore.swift for loop")
-        for _ in 0..<2 {
+        for _ in 0..<5 {
             counter += 1
             print("  [\(counter)]itemStore.swift calling createItem() within for loop.")
             createItem()
         }
         print(" Exited itemStore.swift for loop")
-        allItems[1].name = "Jack-O-Lantern"
-        
+        */
+        /*
+        let lastItem = Item(name: "No more items", serialNumber: "", valueInDollars: 0)
+        allItems.append(lastItem)
+        let lastItem = createItem()
+        lastItem.name = "No more items"
+        lastItem.serialNumber = ""
+        lastItem.valueInDollars = 0
+         */
     }
     
     //@@discardableResult means the caller is free to ignore the result of calling this function.
