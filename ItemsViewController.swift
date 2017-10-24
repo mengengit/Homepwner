@@ -61,8 +61,15 @@ class ItemsViewController: UITableViewController {
         
         //Scroll indicators to start under statusBar as well
         tableView.scrollIndicatorInsets = insets
+        
+        //tableView.rowHeight = 65
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
+        
         print(" Ending viewDidLoad() from ItemsViewController.swift")
     }
+    
+    
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(" Starting override func tableView-B")
@@ -72,16 +79,24 @@ class ItemsViewController: UITableViewController {
         */
         
         // Get a new or recycled cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell",
-                                                 for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
         print("indexPath.row = \(indexPath.row)")
         let item = itemStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.name //+ " S/N " + item.serialNumber!
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        //cell.textLabel?.text = item.name //+ " S/N " + item.serialNumber!
+        //cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        
+        
+        // Configure the cell with the Item
+        
+        cell.nameLabel.text = item.name
+        cell.serialNumberLabel.text = item.serialNumber
+        cell.valueLabel.text = "$\(item.valueInDollars)"
+        
         print(" Exiting override func tableView-B")
 
         return cell
@@ -147,6 +162,7 @@ class ItemsViewController: UITableViewController {
         return true
         }
     }
+    
     override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
         // We see what is proposed in a move.  Now we can manipulate the results as we see fit
         print("Requesting that row \(sourceIndexPath.row) be moved to position \(proposedDestinationIndexPath.row)")
