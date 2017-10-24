@@ -98,7 +98,15 @@ class ItemsViewController: UITableViewController {
         cell.valueLabel.text = "$\(item.valueInDollars)"
         
         print(" Exiting override func tableView-B")
-
+        //Cell is green if less than 5000, red otherwist
+        if item.valueInDollars < 5000 {
+            
+            cell.backgroundColor = UIColor.green
+            
+        }else if item.valueInDollars >= 5000 {
+            
+            cell.backgroundColor = UIColor.red
+        }
         return cell
     }
 
