@@ -22,37 +22,48 @@ class ItemStore {
         }
         print(" Exited itemStore.swift for loop")
         */
-        /*
-        let lastItem = Item(name: "No more items", serialNumber: "", valueInDollars: 0)
-        allItems.append(lastItem)
-        let lastItem = createItem()
-        lastItem.name = "No more items"
-        lastItem.serialNumber = ""
-        lastItem.valueInDollars = 0
-         */
+        
+        //let lastItem = Item(name: "No more items", serialNumber: "", valueInDollars: 0)
+        //allItems.append(lastItem)
+
+        
+         let lastItem = createItem()
+         lastItem.name = "No more items"
+         lastItem.serialNumber = ""
+         lastItem.valueInDollars = 0
     }
     
     //@@discardableResult means the caller is free to ignore the result of calling this function.
     @discardableResult func createItem() -> Item {
         print("   Start of createItem()")
+        print("    -old item count = \(allItems.count)")
         let newItem = Item(random: true)
         print("    \(newItem.name)")
         
         allItems.append(newItem)
-        print("    allItems.count = \(allItems.count)")
-        print("    allItems[allItems.count - 1].name) is ***\(allItems[allItems.count - 1].name)***")
+        if allItems.count >= 2 {
+            moveItem(from: (allItems.count - 2), to: (allItems.count - 1))
+        }
+        print("    -new item count = \(allItems.count)")
+        //print("    allItems.count = \(allItems.count)")
+        //print("    allItems[allItems.count - 1].name) is ***\(allItems[allItems.count - 1].name)***")
         print("   End of createItem()")
         return newItem
     }
     
     func removeItem(_ item: Item) {
+
         if let index = allItems.index(of: item) {
+            print("ItemStore.removeItem removing item at index \(index)")
             allItems.remove(at: index)
         }
     }
     
     func moveItem(from fromIndex: Int, to toIndex: Int) {
+        //Moving is simply removing and reinserting an item somewhere else
+        print("ItemStore.moveItem requested moving item from position \(fromIndex) to position \(toIndex)")
         if fromIndex == toIndex {
+            print("Request denied.  No action performed.  From and To values identical")
             return
         }
         
@@ -60,10 +71,14 @@ class ItemStore {
         let movedItem = allItems[fromIndex]
         
         // Remove item from array
+        print("Move action 1 of 2 removing item")
         allItems.remove(at: fromIndex)
         
         // Insert item in array at new location
+        print("Move action 2 of 2 inserting item in new location")
         allItems.insert(movedItem, at: toIndex)
+        print("Move complete")
+        
         
     }
 

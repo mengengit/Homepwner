@@ -10,7 +10,8 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
-    
+
+    // Add button
     @IBAction func addNewItem(_ sender: UIButton) {
         // Create a new item and add it to the store
         let newItem = itemStore.createItem()
@@ -25,6 +26,7 @@ class ItemsViewController: UITableViewController {
         
     }
     
+    // Edit button
     @IBAction func toggleEditingMode(_ sender: UIButton) {
         // If you are currently in editing mode...
         if isEditing {
@@ -76,6 +78,7 @@ class ItemsViewController: UITableViewController {
         // Set the text on the cell with the description of the item
         // that is at the nth index of items, where n = row this cell
         // will appear in on the tableview
+        print("indexPath.row = \(indexPath.row)")
         let item = itemStore.allItems[indexPath.row]
         cell.textLabel?.text = item.name //+ " S/N " + item.serialNumber!
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
@@ -83,19 +86,34 @@ class ItemsViewController: UITableViewController {
 
         return cell
     }
-    
+
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        // If the tab le view is asking to commit a delete command...
+        // If the table view is asking to commit a delete command...
+        print ("editingStyle = (editingStyle)")
+        let ProtectedRowIndex = itemStore.allItems.count - 1
+        let canRemove = (indexPath.row != ProtectedRowIndex) //true or false
         if editingStyle == .delete {
+            //print("Attempting to delte indexPath.row \(indexPath.row) with allItems.count of \(itemStore.allItems.count)")
             let item = itemStore.allItems[indexPath.row]
+            var message: String
+            var title: String
             
-            let title = "Delete \(item.name)?"
-            let message = "Are you sure you want to delete this item?"
+            switch canRemove {
+            case true:
+                message = "Are you sure you want to delete this item?"
+                title = "Delete \(item.name)?"
+            case false:
+                message = "Not allowed to delete last row!"
+                title = ""
+            }
+            
             
             let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-            
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             ac.addAction(cancelAction)
+            
+            
             //page 207 explains this closure in the handler
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive,
                                              handler: { (action) -> Void in
@@ -104,18 +122,44 @@ class ItemsViewController: UITableViewController {
                 
                 // Also remove that row from the table view with an animation
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                                            
             })
-            ac.addAction(deleteAction)
+            if canRemove {ac.addAction(deleteAction)}
             
             // Present the alert controller modally page 207 i.e. on top of the view
             present(ac, animated: true, completion: nil)
             
         }
+
     }
     
+    //This function allows the "move" operation to take place in the table view.  In addition, it gives us an opportunity to update the datasource to match the table veiw.  Without this function, no rows could be moved. Page 203
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        // UPdate the model
+        // UPdate the model as well
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Disable editing the last row
+        if indexPath.row == itemStore.allItems.count - 1 /* last row */ {
+            return false
+        } else {
+        return true
+        }
+    }
+    override func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        // We see what is proposed in a move.  Now we can manipulate the results as we see fit
+        print("Requesting that row \(sourceIndexPath.row) be moved to position \(proposedDestinationIndexPath.row)")
+        var modifiedPath:IndexPath = proposedDestinationIndexPath
+        
+        if modifiedPath.row == itemStore.allItems.count - 1 {
+            modifiedPath.row -= 1
+            print("Nope.  Request to move items to the end of the list denied. ERROR: Prohibited from moving past last item")
+            print("Instead, let's try to move it to the 2nd to last slot.")
+            return modifiedPath
+        } else {
+            return modifiedPath
+        }
+        
+    }
 }
