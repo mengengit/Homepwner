@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB4296301F9ECDA200657C3F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42962F1F9ECDA200657C3F /* ItemCell.swift */; };
+		BB4296321FA160E300657C3F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4296311FA160E300657C3F /* DetailViewController.swift */; };
 		BB7DC8E91F78094F00E3B5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7DC8E81F78094F00E3B5A4 /* AppDelegate.swift */; };
 		BB7DC8EE1F78094F00E3B5A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB7DC8EC1F78094F00E3B5A4 /* Main.storyboard */; };
 		BB7DC8F01F78094F00E3B5A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB7DC8EF1F78094F00E3B5A4 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		BB42962F1F9ECDA200657C3F /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		BB4296311FA160E300657C3F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BB7DC8E51F78094E00E3B5A4 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7DC8E81F78094F00E3B5A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB7DC8ED1F78094F00E3B5A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				BB7DC8E81F78094F00E3B5A4 /* AppDelegate.swift */,
 				BB7DC8EC1F78094F00E3B5A4 /* Main.storyboard */,
+				BB4296311FA160E300657C3F /* DetailViewController.swift */,
 				BB7DC8EF1F78094F00E3B5A4 /* Assets.xcassets */,
 				BB7DC9161F780A2700E3B5A4 /* ItemsViewController.swift */,
 				BB42962F1F9ECDA200657C3F /* ItemCell.swift */,
@@ -277,6 +280,7 @@
 				BB7DC9171F780A2700E3B5A4 /* ItemsViewController.swift in Sources */,
 				BB7DC9191F780BD900E3B5A4 /* Item.swift in Sources */,
 				BB7DC91B1F7810A500E3B5A4 /* ItemStore.swift in Sources */,
+				BB4296321FA160E300657C3F /* DetailViewController.swift in Sources */,
 				BB7DC8E91F78094F00E3B5A4 /* AppDelegate.swift in Sources */,
 				BB4296301F9ECDA200657C3F /* ItemCell.swift in Sources */,
 			);
