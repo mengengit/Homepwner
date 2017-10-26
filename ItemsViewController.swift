@@ -203,4 +203,12 @@ class ItemsViewController: UITableViewController {
             preconditionFailure("Unexpected segue itentifier.")
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Reloads the table after changes (or no changes) after tapping the Back button from the DetailViewController
+        
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 }

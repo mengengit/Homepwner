@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zdn-9F-wTP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xlv-8d-oN1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -99,10 +99,11 @@
                             <outlet property="delegate" destination="Zdn-9F-wTP" id="uDN-QR-IuC"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="SYl-Ns-Dnq"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqV-U6-pH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3106" y="-170"/>
+            <point key="canvasLocation" x="-2767.1999999999998" y="-170.46476761619192"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="A8Q-Tl-VI4">
@@ -117,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V8y-Iu-g4M">
-                                <rect key="frame" x="0.0" y="28" width="375" height="631"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="587"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2db-fh-WPZ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -132,7 +133,10 @@
                                                 <rect key="frame" x="53" y="0.0" width="322" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="KDh-bi-CRM" id="8Xj-yN-RA7"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -150,6 +154,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="KDh-bi-CRM" id="CsA-1c-zPW"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -167,20 +174,27 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="KDh-bi-CRM" id="EUF-Z9-AGa"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTD-lq-QMY">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="517"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="473"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="qph-SW-bqa" firstAttribute="leading" secondItem="gK5-ZA-2e3" secondAttribute="leading" id="9Th-92-NKs"/>
                                     <constraint firstItem="gK5-ZA-2e3" firstAttribute="leading" secondItem="FSi-ne-iQF" secondAttribute="leading" id="WAH-ov-mk9"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Boa-8z-P7b" appends="YES" id="zTI-bi-Mrg"/>
+                                </connections>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,8 +213,31 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjZ-3c-gjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Boa-8z-P7b">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="KDh-bi-CRM" id="Bli-R6-fFQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2274.4000000000001" y="-170.46476761619192"/>
+            <point key="canvasLocation" x="-1935.2" y="-170.46476761619192"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XgE-uQ-lw7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xlv-8d-oN1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="shk-Wn-OvA">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zdn-9F-wTP" kind="relationship" relationship="rootViewController" id="tQ4-9r-Br2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCt-8k-Amm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3596" y="-170"/>
         </scene>
     </scenes>
 </document>
