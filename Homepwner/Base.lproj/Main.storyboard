@@ -99,7 +99,13 @@
                             <outlet property="delegate" destination="Zdn-9F-wTP" id="uDN-QR-IuC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SYl-Ns-Dnq"/>
+                    <navigationItem key="navigationItem" id="SYl-Ns-Dnq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BQG-f7-mWi">
+                            <connections>
+                                <action selector="addNewItem:" destination="Zdn-9F-wTP" id="HTS-45-En8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqV-U6-pH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
