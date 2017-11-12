@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+//This class was part of Chapter 14 Silver Challenge
+//Need to update the custom class from its default to CustomTextField in the Main.storyboard for it to work
 class CustomTextField: UITextField {
     override func becomeFirstResponder() -> Bool {
         borderStyle = .bezel
