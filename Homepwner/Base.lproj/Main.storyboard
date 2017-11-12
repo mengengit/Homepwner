@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a1X-ub-vmY" id="997-2c-Asg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G67-Xy-iZf">
@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="V8y-Iu-g4M">
-                                <rect key="frame" x="0.0" y="72" width="375" height="587"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="543"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2db-fh-WPZ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
@@ -121,13 +121,13 @@
                                         <rect key="frame" x="0.0" y="38" width="375" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfc-7t-spr">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="43" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gK5-ZA-2e3" customClass="CustomTextField" customModule="Homepwner" customModuleProvider="target">
-                                                <rect key="frame" x="53" y="0.0" width="322" height="30"/>
+                                                <rect key="frame" x="51" y="0.0" width="324" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -141,13 +141,13 @@
                                         <rect key="frame" x="0.0" y="76" width="375" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlI-9J-dD3">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSi-ne-iQF" customClass="CustomTextField" customModule="Homepwner" customModuleProvider="target">
-                                                <rect key="frame" x="53" y="0.0" width="322" height="30"/>
+                                                <rect key="frame" x="50" y="0.0" width="325" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -158,13 +158,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTD-lq-QMY">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="435"/>
+                                        <rect key="frame" x="0.0" y="114" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="247" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="FOc-j7-jFs">
+                                        <rect key="frame" x="0.0" y="142.5" width="375" height="362.5"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynn-qt-6rf">
-                                        <rect key="frame" x="0.0" y="557" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="513" width="375" height="30"/>
                                         <state key="normal" title="Change Date"/>
                                         <connections>
                                             <segue destination="XFy-Z3-RXp" kind="show" identifier="changeDate" id="Gez-A4-AlY"/>
@@ -172,27 +175,38 @@
                                     </button>
                                 </subviews>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstItem="qph-SW-bqa" firstAttribute="leading" secondItem="gK5-ZA-2e3" secondAttribute="leading" id="9Th-92-NKs"/>
-                                    <constraint firstItem="ynn-qt-6rf" firstAttribute="top" secondItem="DTD-lq-QMY" secondAttribute="bottom" constant="8" id="MNu-qE-T2s"/>
-                                    <constraint firstItem="gK5-ZA-2e3" firstAttribute="leading" secondItem="FSi-ne-iQF" secondAttribute="leading" id="WAH-ov-mk9"/>
-                                    <constraint firstAttribute="bottom" secondItem="ynn-qt-6rf" secondAttribute="bottom" id="e1i-SU-4vA"/>
-                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Boa-8z-P7b" appends="YES" id="zTI-bi-Mrg"/>
                                 </connections>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMn-3b-CAt">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zL2-Ao-2hL"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="wdD-XL-S66">
+                                        <connections>
+                                            <action selector="takePicture:" destination="KDh-bi-CRM" id="ljG-cf-l2Q"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="V8y-Iu-g4M" firstAttribute="leading" secondItem="fVP-1N-XMr" secondAttribute="leading" id="CQJ-MB-206"/>
+                            <constraint firstItem="m1s-25-YxY" firstAttribute="top" secondItem="mMn-3b-CAt" secondAttribute="bottom" id="Kaf-mx-4Wt"/>
                             <constraint firstItem="V8y-Iu-g4M" firstAttribute="top" secondItem="lno-en-tfq" secondAttribute="bottom" constant="8" id="SDG-eY-x5u"/>
-                            <constraint firstItem="m1s-25-YxY" firstAttribute="top" secondItem="V8y-Iu-g4M" secondAttribute="bottom" constant="8" id="wJW-xb-KMp"/>
+                            <constraint firstAttribute="trailing" secondItem="mMn-3b-CAt" secondAttribute="trailing" id="YY8-lx-K7B"/>
+                            <constraint firstItem="mMn-3b-CAt" firstAttribute="leading" secondItem="fVP-1N-XMr" secondAttribute="leading" id="n7d-Pc-G9m"/>
+                            <constraint firstItem="mMn-3b-CAt" firstAttribute="top" secondItem="V8y-Iu-g4M" secondAttribute="bottom" constant="8" id="r0y-OR-7ie"/>
                             <constraint firstAttribute="trailing" secondItem="V8y-Iu-g4M" secondAttribute="trailing" id="zrU-Aj-x7E"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="DTD-lq-QMY" id="EI5-9Y-QG5"/>
+                        <outlet property="imageView" destination="FOc-j7-jFs" id="cdj-iZ-02h"/>
                         <outlet property="nameField" destination="qph-SW-bqa" id="knP-6A-xfN"/>
                         <outlet property="serialNumberField" destination="gK5-ZA-2e3" id="Rak-cB-sOa"/>
                         <outlet property="valueField" destination="FSi-ne-iQF" id="Ut7-sQ-ab1"/>
