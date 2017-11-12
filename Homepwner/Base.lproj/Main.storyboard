@@ -157,17 +157,26 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTD-lq-QMY">
-                                        <rect key="frame" x="0.0" y="114" width="375" height="473"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTD-lq-QMY">
+                                        <rect key="frame" x="0.0" y="114" width="375" height="435"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynn-qt-6rf">
+                                        <rect key="frame" x="0.0" y="557" width="375" height="30"/>
+                                        <state key="normal" title="Change Date"/>
+                                        <connections>
+                                            <segue destination="XFy-Z3-RXp" kind="show" identifier="changeDate" id="Gez-A4-AlY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="qph-SW-bqa" firstAttribute="leading" secondItem="gK5-ZA-2e3" secondAttribute="leading" id="9Th-92-NKs"/>
+                                    <constraint firstItem="ynn-qt-6rf" firstAttribute="top" secondItem="DTD-lq-QMY" secondAttribute="bottom" constant="8" id="MNu-qE-T2s"/>
                                     <constraint firstItem="gK5-ZA-2e3" firstAttribute="leading" secondItem="FSi-ne-iQF" secondAttribute="leading" id="WAH-ov-mk9"/>
+                                    <constraint firstAttribute="bottom" secondItem="ynn-qt-6rf" secondAttribute="bottom" id="e1i-SU-4vA"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Boa-8z-P7b" appends="YES" id="zTI-bi-Mrg"/>
@@ -197,6 +206,24 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1935.2" y="-170.46476761619192"/>
+        </scene>
+        <!--Date Created View Controller-->
+        <scene sceneID="q1g-0K-Vr3">
+            <objects>
+                <viewController id="XFy-Z3-RXp" customClass="DateCreatedViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="muA-Sg-RwQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="KR9-0Z-cie"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fXF-ZS-ivs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tfC-Rh-hS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1216" y="-166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XgE-uQ-lw7">

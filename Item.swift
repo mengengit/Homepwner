@@ -12,7 +12,7 @@ class Item: NSObject {
     var name: String
     var valueInDollars: Int
     var serialNumber: String?
-    let dateCreated: Date
+    var dateCreated: Date
     //This delegate initializer gets info from the convenience initializer
     //In the line below, "name", "serialNumber" and "valueInDollars" are what I call "stay tuned" parameters.  We are initalizing them to something which will be declared here or passed from the convenience initializer.  In this case, only self.dateCreated has a specified actual value.
     init(name: String, serialNumber: String?, valueInDollars: Int) {

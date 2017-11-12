@@ -73,4 +73,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "changeDate"?:
+            let dateCreatedViewController = segue.destination as! DateCreatedViewController
+            dateCreatedViewController.item = item
+        default:
+            preconditionFailure("Unexpected segue identifier.")
+        }
+    }
 }
