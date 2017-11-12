@@ -17,11 +17,27 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // just pick from photo library
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
+            
+            let overlayView = UIView(frame: imagePicker.cameraOverlayView!.frame)
+            
+            let crosshairLabel = UILabel()
+            crosshairLabel.text = "+"
+            crosshairLabel.font = UIFont.systemFont(ofSize: 50)
+            crosshairLabel.translatesAutoresizingMaskIntoConstraints = false
+            overlayView.addSubview(crosshairLabel)
+            
+            crosshairLabel.centerXAnchor.constraint(equalTo: overlayView.centerXAnchor).isActive = true
+            crosshairLabel.centerYAnchor.constraint(equalTo: overlayView.centerYAnchor).isActive = true
+            
+            // To avoid blocking the underneath default camera controls
+            overlayView.isUserInteractionEnabled = false
+            
+            imagePicker.cameraOverlayView = overlayView
         } else {
             imagePicker.sourceType = .photoLibrary
         }
         imagePicker.delegate = self
-        
+        imagePicker.allowsEditing = true
         // Place image picker on the screen
         present(imagePicker, animated: true, completion: nil)
     }
@@ -75,6 +91,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // display it on the image view
         let imageToDisplay = imageStore.image(forKey: key)
         imageView.image = imageToDisplay
+        removePictureBarButton.isEnabled = imageView.image != nil
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -112,7 +129,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         // Get picked image from info dictionary
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        //let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage //Bronze Challenge page 278
         
         // Store the image in the ImageStore for the item's key
         imageStore.setImage(image, forKey: item.itemKey)
@@ -123,5 +141,34 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Take image picker off the screen -
         // you must call this dismiss method
         dismiss(animated: true, completion: nil)
+        removePictureBarButton.isEnabled = true
+    }
+    var flexibleSpaceBarButton: UIBarButtonItem!
+    var removePictureBarButton: UIBarButtonItem!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        flexibleSpaceBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        removePictureBarButton = UIBarButtonItem(
+            barButtonSystemItem: .trash,
+            target: self, action: #selector(removePicture(_:)))
+        
+        // Locate the toolbar at bottom and add to it the barButtons
+        for subView in self.view.subviews {
+            if let toolbar = subView as? UIToolbar {
+                var toolbarItems = toolbar.items
+                toolbarItems?.append(flexibleSpaceBarButton)
+                toolbarItems?.append(removePictureBarButton)
+                toolbar.setItems(toolbarItems, animated: true)
+                break
+            }
+        }
+    }
+    
+    @IBAction func removePicture(_ sender: UIBarButtonItem) {
+        imageStore.deleteImage(forKey: item.itemKey)
+        imageView.image = nil
+        removePictureBarButton.isEnabled = false
     }
 }
