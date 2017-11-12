@@ -23,10 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Create an ItemStore
         let itemStore = ItemStore()
         
-        // Access the ItemsViewController and set its item store
+        //Create an ImageStore page 273
+        let imageStore = ImageStore()
+        
+        // Access the ItemsViewController and set its item store and image store
         let navController = window!.rootViewController as! UINavigationController
         let itemsController = navController.topViewController as! ItemsViewController
         itemsController.itemStore = itemStore
+        itemsController.imageStore = imageStore
         print("Exiting AppDelegate.swift.application started.")
         
         return true

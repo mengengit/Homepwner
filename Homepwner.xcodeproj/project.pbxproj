@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB2BCF6A1FB7E40F001AE917 /* DateCreatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCF691FB7E40F001AE917 /* DateCreatedViewController.swift */; };
 		BB2BCF6C1FB7E873001AE917 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCF6B1FB7E873001AE917 /* CustomTextField.swift */; };
+		BB2BCF741FB8FA44001AE917 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2BCF731FB8FA44001AE917 /* ImageStore.swift */; };
 		BB4296301F9ECDA200657C3F /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB42962F1F9ECDA200657C3F /* ItemCell.swift */; };
 		BB4296321FA160E300657C3F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4296311FA160E300657C3F /* DetailViewController.swift */; };
 		BB7DC8E91F78094F00E3B5A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7DC8E81F78094F00E3B5A4 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		BB2BCF691FB7E40F001AE917 /* DateCreatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCreatedViewController.swift; sourceTree = "<group>"; };
 		BB2BCF6B1FB7E873001AE917 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		BB2BCF731FB8FA44001AE917 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		BB42962F1F9ECDA200657C3F /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		BB4296311FA160E300657C3F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BB7DC8E51F78094E00E3B5A4 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,17 +112,18 @@
 			isa = PBXGroup;
 			children = (
 				BB7DC8E81F78094F00E3B5A4 /* AppDelegate.swift */,
-				BB7DC8EC1F78094F00E3B5A4 /* Main.storyboard */,
 				BB2BCF6B1FB7E873001AE917 /* CustomTextField.swift */,
-				BB4296311FA160E300657C3F /* DetailViewController.swift */,
-				BB7DC8EF1F78094F00E3B5A4 /* Assets.xcassets */,
-				BB7DC9161F780A2700E3B5A4 /* ItemsViewController.swift */,
-				BB42962F1F9ECDA200657C3F /* ItemCell.swift */,
-				BB7DC9181F780BD900E3B5A4 /* Item.swift */,
 				BB2BCF691FB7E40F001AE917 /* DateCreatedViewController.swift */,
+				BB4296311FA160E300657C3F /* DetailViewController.swift */,
+				BB2BCF731FB8FA44001AE917 /* ImageStore.swift */,
+				BB7DC9181F780BD900E3B5A4 /* Item.swift */,
+				BB42962F1F9ECDA200657C3F /* ItemCell.swift */,
 				BB7DC91A1F7810A500E3B5A4 /* ItemStore.swift */,
+				BB7DC9161F780A2700E3B5A4 /* ItemsViewController.swift */,
 				BB7DC8F11F78094F00E3B5A4 /* LaunchScreen.storyboard */,
+				BB7DC8EC1F78094F00E3B5A4 /* Main.storyboard */,
 				BB7DC8F41F78094F00E3B5A4 /* Info.plist */,
+				BB7DC8EF1F78094F00E3B5A4 /* Assets.xcassets */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				BB7DC9191F780BD900E3B5A4 /* Item.swift in Sources */,
 				BB7DC91B1F7810A500E3B5A4 /* ItemStore.swift in Sources */,
 				BB2BCF6C1FB7E873001AE917 /* CustomTextField.swift in Sources */,
+				BB2BCF741FB8FA44001AE917 /* ImageStore.swift in Sources */,
 				BB4296321FA160E300657C3F /* DetailViewController.swift in Sources */,
 				BB7DC8E91F78094F00E3B5A4 /* AppDelegate.swift in Sources */,
 				BB4296301F9ECDA200657C3F /* ItemCell.swift in Sources */,
