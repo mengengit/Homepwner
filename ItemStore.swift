@@ -11,6 +11,19 @@ import UIKit
 class ItemStore {
     //allItems is an array of type Item which is type NSObject
     var allItems = [Item]()
+    let itemArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("items.archive")
+    }()
+    func saveChanges() -> Bool {
+        print("Saving items to: \(itemArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(allItems, toFile: itemArchiveURL.path)
+    }
+    
+
+    
+    
     var counter = 0
     init() {
         /*
@@ -31,7 +44,13 @@ class ItemStore {
          lastItem.name = "No more items"
          lastItem.serialNumber = ""
          lastItem.valueInDollars = 0
+        if let archivedItems = NSKeyedUnarchiver.unarchiveObject(withFile: itemArchiveURL.path) as? [Item] {
+            allItems = archivedItems
+        }
     }
+    //init() {
+
+    //}
     
     //@@discardableResult means the caller is free to ignore the result of calling this function.
     @discardableResult func createItem() -> Item {
